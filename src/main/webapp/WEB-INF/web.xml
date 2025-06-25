@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns="https://jakarta.ee/xml/ns/jakartaee"
+	xsi:schemaLocation="https://jakarta.ee/xml/ns/jakartaee https://jakarta.ee/xml/ns/jakartaee/web-app_6_0.xsd"
+	id="WebApp_ID" version="6.0">
+	<display-name>LoginSessionAnswer</display-name>
+	<welcome-file-list>
+		<welcome-file>index.html</welcome-file>
+
+		<welcome-file>index.jsp</welcome-file>
+		<welcome-file>index.htm</welcome-file>
+		<welcome-file>default.html</welcome-file>
+		<welcome-file>default.jsp</welcome-file>
+		<welcome-file>default.htm</welcome-file>
+	</welcome-file-list>
+
+	<servlet>
+		<description></description>
+		<display-name>EmployeeController</display-name>
+		<servlet-name>EmployeeController</servlet-name>
+		<servlet-class>expose.controller.EmployeeController</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>EmployeeController</servlet-name>
+		<url-pattern>/EmployeeController</url-pattern>
+	</servlet-mapping>
+
+	<servlet>
+		<description></description>
+		<display-name>CustomerController</display-name>
+		<servlet-name>CustomerController</servlet-name>
+		<servlet-class>expose.controller.CustomerController</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>CustomerController</servlet-name>
+		<url-pattern>/CustomerController</url-pattern>
+	</servlet-mapping>
+	
+	<servlet>
+		<description></description>
+		<display-name>ProductController</display-name>
+		<servlet-name>ProductController</servlet-name>
+		<servlet-class>expose.controller.ProductController</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>ProductController</servlet-name>
+		<url-pattern>/ProductController</url-pattern>
+	</servlet-mapping>
+	
+	<servlet>
+		<description></description>
+		<display-name>CartController</display-name>
+		<servlet-name>CartController</servlet-name>
+		<servlet-class>expose.controller.CartController</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>CartController</servlet-name>
+		<url-pattern>/CartController</url-pattern>
+	</servlet-mapping>
+	
+	<servlet>
+		<description></description>
+		<display-name>OrderController</display-name>
+		<servlet-name>OrderController</servlet-name>
+		<servlet-class>expose.controller.OrderController</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>OrderController</servlet-name>
+		<url-pattern>/OrderController</url-pattern>
+	</servlet-mapping>
+	
+	<servlet>
+		<description></description>
+		<display-name>PaymentController</display-name>
+		<servlet-name>PaymentController</servlet-name>
+		<servlet-class>expose.controller.PaymentController</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>PaymentController</servlet-name>
+		<url-pattern>/PaymentController</url-pattern>
+	</servlet-mapping>
+	
+	  <servlet>
+        <servlet-name>DashboardController</servlet-name>
+        <servlet-class>expose.controller.DashboardController</servlet-class>
+    </servlet>
+    
+    <servlet-mapping>
+        <servlet-name>DashboardController</servlet-name>
+        <url-pattern>/admin/monthlysales/*</url-pattern>
+    </servlet-mapping>
+    
+    <servlet-mapping>
+        <servlet-name>DashboardController</servlet-name>
+        <url-pattern>/admin/yearlysales/*</url-pattern>
+    </servlet-mapping>
+    
+    <servlet-mapping>
+        <servlet-name>DashboardController</servlet-name>
+        <url-pattern>/admin/location</url-pattern>
+    </servlet-mapping>
+	
+	
+
+
+
+
+</web-app>
+

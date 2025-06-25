@@ -1,0 +1,83 @@
+.login-error-message {
+	color: red;
+	font-size: 14px;
+	margin-bottom: 10px;
+}
+
+body {
+	font-family: 'Nunito', sans-serif;
+	
+
+}
+
+.roundedcrnr {
+	border-radius: 15px !important;
+}
+
+
+.card {
+	border-radius: 12px !important;
+}
+
+
+.btn {
+	border-radius: 30px;
+}
+
+a {
+	text-decoration: none;
+	color:var(--bs-secondary-color) !important;
+}
+
+
+ .form-control , .form-select {
+	border-radius: 60px !important;
+}  
+
+ .form-label {
+    font-size: 14px; 
+}
+
+/*
+
+.form-control {
+    font-size: 14px; 
+    padding: 5px 10px; 
+} */
+
+.sticky-navbar {
+    position: sticky !important;
+    top: 0 !important;
+    width: 100% !important;
+    z-index: 1000 !important;
+    background-color: #f5f7fa;
+    padding: 10px 20px !important;
+    transition: box-shadow 0.3s ease-in-out !important; /* Smooth transition */
+}
+
+
+.sticky-navbar.scrolled {
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15)!important;
+    opacity: 1!important; /* Slight fade effect */
+    transition: box-shadow 0.3s ease-in-out, opacity 0.3s ease-in-out!important;
+    
+}
+
+.rounded-start {
+    border-top-left-radius: 30px!important;
+    border-bottom-left-radius: 30px!important;
+    border-top-right-radius: 0!important;
+    border-bottom-right-radius: 0!important;
+}
+
+.rounded-end {
+    border-top-left-radius: 0!important;
+    border-bottom-left-radius: 0!important;
+    border-top-right-radius: 30px!important;
+    border-bottom-right-radius: 30px!important;
+}
+
+
+
+
+
