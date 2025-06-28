@@ -251,7 +251,7 @@ if (session.getAttribute("customer") == null) {
 
 														</div>
 														<div class="text-end">
-															<button type="submit" class="btn btn-primary px-7">Save
+															<button type="submit" class="btn btn-primary px-7 rounded-5">Save
 																changes</button>
 
 														</div>

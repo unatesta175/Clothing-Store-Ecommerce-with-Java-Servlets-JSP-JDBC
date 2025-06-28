@@ -43,7 +43,7 @@
 				<div class="col-12">
 					<h2 class="page-header">
 						<img src="${pageContext.request.contextPath}/admin/dist/img/logo-expose.png" width="75" >Expose Print <small
-							class="float-right">Date: ${payment.createdAt}</small>
+							class="float-right">Date: <fmt:formatDate value="${payment.createdAt}" pattern="yyyy/MM/dd hh:mm:ss.S a" /></small>
 					</h2>
 				</div>
 				<!-- /.col -->
@@ -69,7 +69,7 @@
 				<!-- /.col -->
 				<div class="col-sm-4 invoice-col">
 					<b>Invoice #007612</b><br> <br> <b>Order ID:</b>
-					${order.id}<br> <b>Payment Date:</b> ${payment.createdAt}<br>
+					${order.id}<br> <b>Payment Date:</b> <fmt:formatDate value="${payment.createdAt}" pattern="yyyy/MM/dd hh:mm:ss.S a" /><br>
 				</div>
 				<!-- /.col -->
 			</div>
@@ -132,7 +132,7 @@
 			
 				<!-- /.col -->
 				<div class="col-6">
-					<p class="lead">Amount Paid on  ${payment.createdAt}</p>
+					<p class="lead">Amount Paid on  <fmt:formatDate value="${payment.createdAt}" pattern="yyyy/MM/dd hh:mm:ss.S a" /></p>
 
 					<div class="table-responsive">
 						<table class="table">

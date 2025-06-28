@@ -34,7 +34,7 @@ response.setDateHeader("Expires", 0);
 							ease—whether for your team, business, or event. High-quality
 							prints, quick delivery, and endless customization options await.</p>
 						<div class="d-grid gap-2 d-md-flex justify-content-md-start">
-							<a href="ProductController?action=productCatalogue"><button type="button" class="btn btn-dark btn-lg px-4 me-md-2">Shop
+							<a href="ProductController?action=productCatalogue"><button type="button" class="btn btn-dark btn-lg px-4 me-md-2 rounded-5">Shop
 								Now</button></a>
 
 						</div>

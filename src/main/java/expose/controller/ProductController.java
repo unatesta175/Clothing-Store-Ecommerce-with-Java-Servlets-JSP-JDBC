@@ -100,14 +100,14 @@ public class ProductController extends HttpServlet {
 
 					String productcollarType = ((Topwear) p).getCollarType();
 					String productfitType = "";
-					request.setAttribute("productcollarType", productcollarType);
+					request.setAttribute("productcollarType", productcollarType + " Collar");
 					request.setAttribute("productfitType", productfitType);
 				} else if (p instanceof Bottomwear){
 					
 					String productfitType = ((Bottomwear) p).getFitType();
 					String productcollarType ="";
 					request.setAttribute("productfitType", productfitType);
-					request.setAttribute("productcollarType", productcollarType);
+					request.setAttribute("productcollarType", productcollarType );
 				}
 				
 				request.setAttribute("product", ProductDAO.getProduct(pid));
@@ -338,7 +338,7 @@ public class ProductController extends HttpServlet {
 			dao.addProduct(product);
 
 			request.getSession().setAttribute("successMessage", "Product created successfully.");
-			response.sendRedirect("ProductController?action=create");
+			response.sendRedirect("ProductController?action=listProduct");
 
 		} catch (NumberFormatException e) {
 			e.printStackTrace();
@@ -453,7 +453,9 @@ public class ProductController extends HttpServlet {
 			ProductDAO.updateProduct(product);
 
 			request.getSession().setAttribute("successMessage", "Product updated successfully.");
-			response.sendRedirect("ProductController?action=update&pid=" + id);
+			/* response.sendRedirect("ProductController?action=update&pid=" + id); */
+			response.sendRedirect("ProductController?action=listProduct");
+			
 
 		} catch (NumberFormatException e) {
 			e.printStackTrace();

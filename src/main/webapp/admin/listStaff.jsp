@@ -38,7 +38,7 @@ if (session.getAttribute("employee") == null) {
 				<li class="nav-item"><a class="nav-link" data-widget="pushmenu"
 					href="#" role="button"><i class="fas fa-bars"></i></a></li>
 				<li class="nav-item d-none d-sm-inline-block"><a
-					href="index.jsp" class="nav-link">Home</a></li>
+					href="${pageContext.request.contextPath}/admin/index.jsp" class="nav-link">Home</a></li>
 
 			</ul>
 
@@ -142,10 +142,12 @@ if (session.getAttribute("employee") == null) {
 															class="d-flex justify-content-center align-items-center gap-2">
 															<a
 																href="${pageContext.request.contextPath}/EmployeeController?action=updateEmployee&empid=<c:out value="${employee.id}" />"
+																title="Update employee details"
 																class="btn btn-warning btn-sm" style="margin-right: 4px !important;"> <i
 																class="fas fa-edit"></i>
 															</a> <a
 																href="${pageContext.request.contextPath}/EmployeeController?action=deleteEmployee&empid=<c:out value="${employee.id}" />"
+																title="Delete employee"
 																class="btn btn-danger btn-sm"> <i
 																class="fas fa-trash-alt"></i>
 															</a>

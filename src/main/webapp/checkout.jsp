@@ -18,7 +18,13 @@ response.setDateHeader("Expires", 0);
 <html>
 <head>
 <%@include file="/includes/head.jsp"%>
-
+<style>
+	.btn-outline-secondary.custom-hover:hover {
+	color: white !important;               /* Text becomes white */
+	background-color: #31374a !important;  /* Background becomes dark slate */
+	border-color: #31374a !important;      /* Border matches background */
+}
+</style>
 <meta charset="UTF-8">
 <title>Expose Printing | Checkout</title>
 </head>
@@ -106,9 +112,11 @@ response.setDateHeader("Expires", 0);
 							</div>
 							<div class="col-md-4 col-lg-3 d-grid">
 								<a href="CartController?action=viewCart"
-									class="rounded-5 btn btn-phoenix-secondary text-nowrap"
+									class="rounded-5 btn btn-outline-secondary custom-hover text-nowrap"
 									>Cancel Checkout and Exit</a>
 							</div>
+							
+							
 
 
 

@@ -98,31 +98,7 @@ public class PaymentDAO {
         }
     }
     
-    public static Payment getPaymentByTransactionNo(String transactionNo) throws SQLException {
-        String sql = "SELECT * FROM payments WHERE transaction_no = ?";
-        
-        try (Connection conn = ConnectionManager.getConnection();
-             PreparedStatement stmt = conn.prepareStatement(sql)) {
-            
-            stmt.setString(1, transactionNo);
-            ResultSet rs = stmt.executeQuery();
-            
-            if (rs.next()) {
-                Payment payment = new Payment();
-                payment.setId(rs.getInt("id"));
-                payment.setTransactionNo(rs.getString("transaction_no"));
-                payment.setAmount(rs.getDouble("amount"));
-                payment.setStatus(rs.getString("status"));
-                payment.setMethod(rs.getString("method"));
-                payment.setBillcode(rs.getString("billcode"));
-                payment.setOrderId(rs.getInt("order_id"));
-                payment.setCreatedAt(rs.getTimestamp("created_at"));
-                payment.setUpdatedAt(rs.getTimestamp("updated_at"));
-                return payment;
-            }
-            return null;
-        }
-    }
+    
     
     public static boolean updatePaymentStatus(String billcode, String status, String transactionNo) throws SQLException {
         String sql = "UPDATE payments SET status = ?, transaction_no = ?, updated_at = CURRENT_TIMESTAMP WHERE billcode = ?";

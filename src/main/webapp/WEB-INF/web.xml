@@ -15,7 +15,6 @@
 		<welcome-file>default.jsp</welcome-file>
 		<welcome-file>default.htm</welcome-file>
 	</welcome-file-list>
-
 	<servlet>
 		<description></description>
 		<display-name>EmployeeController</display-name>
@@ -37,7 +36,7 @@
 		<servlet-name>CustomerController</servlet-name>
 		<url-pattern>/CustomerController</url-pattern>
 	</servlet-mapping>
-	
+
 	<servlet>
 		<description></description>
 		<display-name>ProductController</display-name>
@@ -48,7 +47,7 @@
 		<servlet-name>ProductController</servlet-name>
 		<url-pattern>/ProductController</url-pattern>
 	</servlet-mapping>
-	
+
 	<servlet>
 		<description></description>
 		<display-name>CartController</display-name>
@@ -59,7 +58,7 @@
 		<servlet-name>CartController</servlet-name>
 		<url-pattern>/CartController</url-pattern>
 	</servlet-mapping>
-	
+
 	<servlet>
 		<description></description>
 		<display-name>OrderController</display-name>
@@ -70,7 +69,7 @@
 		<servlet-name>OrderController</servlet-name>
 		<url-pattern>/OrderController</url-pattern>
 	</servlet-mapping>
-	
+
 	<servlet>
 		<description></description>
 		<display-name>PaymentController</display-name>
@@ -81,28 +80,28 @@
 		<servlet-name>PaymentController</servlet-name>
 		<url-pattern>/PaymentController</url-pattern>
 	</servlet-mapping>
-	
-	  <servlet>
-        <servlet-name>DashboardController</servlet-name>
-        <servlet-class>expose.controller.DashboardController</servlet-class>
-    </servlet>
-    
-    <servlet-mapping>
-        <servlet-name>DashboardController</servlet-name>
-        <url-pattern>/admin/monthlysales/*</url-pattern>
-    </servlet-mapping>
-    
-    <servlet-mapping>
-        <servlet-name>DashboardController</servlet-name>
-        <url-pattern>/admin/yearlysales/*</url-pattern>
-    </servlet-mapping>
-    
-    <servlet-mapping>
-        <servlet-name>DashboardController</servlet-name>
-        <url-pattern>/admin/location</url-pattern>
-    </servlet-mapping>
-	
-	
+
+	<servlet>
+		<servlet-name>DashboardController</servlet-name>
+		<servlet-class>expose.controller.DashboardController</servlet-class>
+	</servlet>
+
+	<servlet-mapping>
+		<servlet-name>DashboardController</servlet-name>
+		<url-pattern>/admin/monthlysales/*</url-pattern>
+	</servlet-mapping>
+
+	<servlet-mapping>
+		<servlet-name>DashboardController</servlet-name>
+		<url-pattern>/admin/yearlysales/*</url-pattern>
+	</servlet-mapping>
+
+	<servlet-mapping>
+		<servlet-name>DashboardController</servlet-name>
+		<url-pattern>/admin/location</url-pattern>
+	</servlet-mapping>
+
+
 
 
 

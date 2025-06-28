@@ -121,13 +121,14 @@ public class OrderDAO {
 	  
 		public static int getTotalOrders(int customerId) {
 	        int total = 0;
-	        String sql = "SELECT count(*) AS total FROM orders WHERE customer_id = ?  AND status != ?";
+	        String sql = "SELECT count(*) AS total FROM orders WHERE customer_id = ?  AND status != ? AND status != ?";
 
 	        try (
 	        		Connection con = ConnectionManager.getConnection();
 	        		PreparedStatement stmt = con.prepareStatement(sql)) {
 	            stmt.setInt(1, customerId);
 		        stmt.setString(2, "Failed");
+		        stmt.setString(3, "Pending");
 	            ResultSet rs = stmt.executeQuery();
 
 	            if (rs.next()) {
@@ -141,12 +142,13 @@ public class OrderDAO {
 	    }
 		
 		public static Double getTotalPriceOrder(int customerId) throws SQLException {
-		    String sql = "SELECT SUM(totalprice) AS subtotal FROM orders WHERE customer_id = ? AND status != ?";
+		    String sql = "SELECT SUM(totalprice) AS subtotal FROM orders WHERE customer_id = ? AND status != ? AND status != ?";
 		    try (Connection con = ConnectionManager.getConnection();
 		         PreparedStatement stmt = con.prepareStatement(sql)) {
 		         
 		        stmt.setInt(1, customerId);
-		        stmt.setString(2, "Failed");
+		        stmt.setString(2, "Pending");
+		        stmt.setString(3, "Failed");
 		        ResultSet rs = stmt.executeQuery();
 		        
 		        if (rs.next()) {
@@ -157,7 +159,7 @@ public class OrderDAO {
 		}
 		
 		public static String getLastOrder(int customerId) {
-	        String sql = "SELECT * FROM orders WHERE customer_id = ? AND status != ? ORDER BY created_at DESC FETCH FIRST 1 ROWS ONLY";
+	        String sql = "SELECT * FROM orders WHERE customer_id = ? AND status != ? AND status != ? ORDER BY created_at DESC FETCH FIRST 1 ROWS ONLY";
 	        Order order = null;
 	        String lastOrderDate = "";
 
@@ -165,6 +167,7 @@ public class OrderDAO {
 			         PreparedStatement stmt = con.prepareStatement(sql)) {
 	            stmt.setInt(1, customerId);
 	            stmt.setString(2, "Failed");
+	            stmt.setString(3, "Pending");
 	            ResultSet rs = stmt.executeQuery();
 
 	            if (rs.next()) {

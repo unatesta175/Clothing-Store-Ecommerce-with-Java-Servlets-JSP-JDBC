@@ -34,7 +34,7 @@ if (session.getAttribute("employee") == null) {
 				<li class="nav-item"><a class="nav-link" data-widget="pushmenu"
 					href="#" role="button"><i class="fas fa-bars"></i></a></li>
 				<li class="nav-item d-none d-sm-inline-block"><a
-					href="index.jsp" class="nav-link">Home</a></li>
+					href="${pageContext.request.contextPath}/admin/index.jsp" class="nav-link">Home</a></li>
 
 			</ul>
 
@@ -58,7 +58,7 @@ if (session.getAttribute("employee") == null) {
 						<!-- /.col -->
 						<div class="col-sm-6">
 							<ol class="breadcrumb float-sm-right">
-								<li class="breadcrumb-item"><a href="#">Home</a></li>
+								<li class="breadcrumb-item"><a href="${pageContext.request.contextPath}/admin/index.jsp">Home</a></li>
 								<li class="breadcrumb-item active">Products</li>
 							</ol>
 						</div>
@@ -135,16 +135,18 @@ if (session.getAttribute("employee") == null) {
 													<td><c:out value="${product.stock}" /></td>
 													<td><fmt:formatDate value="${product.createdAt}"
 															pattern="d/M/yyyy, h:mm:ss a" /></td>
-													<td><fmt:formatDate value="${product.updatedAt}"
+												<td><fmt:formatDate value="${product.updatedAt}"
 															pattern="d/M/yyyy, h:mm:ss a" /></td>
 													<td>
 														<div class="d-flex">
 															<a
 																href="${pageContext.request.contextPath}/ProductController?action=update&pid=<c:out value='${product.id}' />"
+																title="Update product details"
 																class="btn btn-warning btn-sm " style="margin-right: 4px !important;"> <i
 																class="fas fa-edit"></i>
 															</a> <a
 																href="${pageContext.request.contextPath}/ProductController?action=delete&pid=<c:out value='${product.id}' />"
+																title="Delete product"
 																class="btn btn-danger btn-sm" > <i
 																class="fas fa-trash-alt"></i>
 															</a>

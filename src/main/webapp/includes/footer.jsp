@@ -20,7 +20,7 @@
 						class="text-body-tertiary fw-semibold fs-9 mb-1" href="login.jsp">Sign
 						In</a> <a class="text-body-tertiary fw-semibold fs-9 mb-1"
 						href="register.jsp">Sign Up</a> <a
-						class="text-body-tertiary fw-semibold fs-9 mb-1" href="ProductController?action=productCatalogue">Products</a>
+						class="text-body-tertiary fw-semibold fs-9 mb-1" href="ProductController?action=productCatalogue">Product Catalog</a>
 					<a class="text-body-tertiary fw-semibold fs-9 mb-1" href="CustomerController?action=profile">Profile</a>
 
 						

@@ -167,7 +167,7 @@ response.setDateHeader("Expires", 0);
 															</td>
 															<td
 																class="total align-middle text-body-tertiary text-end py-2">
-																<c:out value="${order.createdAt}" />
+																<fmt:formatDate value="${order.createdAt}" pattern="yyyy/MM/dd hh:mm:ss.S a" />
 															</td>
 															<td
 																class="date align-middle fw-semibold text-end py-2 text-body-highlight">

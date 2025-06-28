@@ -116,8 +116,7 @@ String activePage = (String) request.getAttribute("activePage");
 
 
 
-				<a href="<%=request.getContextPath()%>/admin/login.jsp" class="text-center">I already have a
-					membership</a>
+				<a href="<%=request.getContextPath()%>/admin/login.jsp" class="text-center">I already have an account</a>
 			</div>
 			<!-- /.form-box -->
 		</div>

@@ -20,6 +20,10 @@ public class PaymentController extends HttpServlet {
     
     private static final long serialVersionUID = 1L;
 
+    //http://localhost:8080/exposeprinting.com.my/PaymentController?action=success&status_id=1&billcode=4t3zkopf&order_id=20&msg=ok&transaction_id=TP2506033287588789
+    
+    //http://localhost:8080/exposeprinting.com.my/PaymentController?action=failed&status_id=1&%20billcode=cpbbm7wo&order_id=9&msg=ok&transaction_id=TP2506014009151447
+    
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {

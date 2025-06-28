@@ -38,7 +38,7 @@ if (session.getAttribute("employee") == null) {
 				<li class="nav-item"><a class="nav-link" data-widget="pushmenu"
 					href="#" role="button"><i class="fas fa-bars"></i></a></li>
 				<li class="nav-item d-none d-sm-inline-block"><a
-					href="index.jsp" class="nav-link">Home</a></li>
+					href="${pageContext.request.contextPath}/admin/index.jsp" class="nav-link">Home</a></li>
 
 			</ul>
 
@@ -62,7 +62,7 @@ if (session.getAttribute("employee") == null) {
 						<!-- /.col -->
 						<div class="col-sm-6">
 							<ol class="breadcrumb float-sm-right">
-								<li class="breadcrumb-item"><a href="index.jsp">Home</a></li>
+								<li class="breadcrumb-item"><a href="${pageContext.request.contextPath}/admin/index.jsp">Home</a></li>
 								<li class="breadcrumb-item"><a
 									href="${pageContext.request.contextPath}/ProductController?action=listproduct">List
 										Product</a></li>
@@ -396,12 +396,14 @@ if (session.getAttribute("employee") == null) {
 									</div>
 									<!-- /.card-body -->
 									<div class="card-footer ">
-										<input type="submit" class="btn btn-warning"
-											style="border-radius: 30px;" value="Submit Changes">
+										
 										<a
 											href="${pageContext.request.contextPath}/ProductController?action=listProduct"
-											class="btn btn-primary float-right"
+											class="btn btn-secondary "
 											style="border-radius: 30px;">Back</a>
+											
+											<input type="submit" class="btn btn-primary float-right"
+											style="border-radius: 30px;" value="Submit Changes">
 									</div>
 									<!-- /.card-footer -->
 								</form>

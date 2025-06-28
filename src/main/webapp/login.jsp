@@ -11,7 +11,13 @@ response.setDateHeader("Expires", 0);
 <html>
 <head>
 <%@include file="/includes/head.jsp"%>
-
+<style>
+	.btn-outline-secondary.custom-hover:hover {
+	color: white !important;               /* Text becomes white */
+	background-color: #31374a !important;  /* Background becomes dark slate */
+	border-color: #31374a !important;      /* Border matches background */
+}
+</style>
 <meta charset="ISO-8859-1">
 <title>Expose Printing | Login</title>
 </head>
@@ -106,14 +112,13 @@ response.setDateHeader("Expires", 0);
 												Password?</a>
 										</div>
 									</div> -->
-									<button type="submit" class="rounded-5 btn btn-primary w-100 mb-3">Login</button>
+									<button type="submit" class="rounded-5 btn btn-primary w-100 mb-1">Login</button>
 									<div class="text-center">
-										<span class="fs-9 fw-bold"> Don't have an account ? <a  href="register.jsp"> Sign up now</a></span> 
+										<span class="fs-9 fw-bold"> Don't have an account ?</span> 
 									</div>
-									<div class="text-center">
-										<span class="fs-9 fw-bold">  <a  href="admin/login.jsp"> Go to Admin UI </a></span> 
-										
-									</div>
+									<a type="button" href="register.jsp" class="rounded-5 btn btn-secondary w-100 mb-3 text-white">Sign up now</a>
+									
+									<a type="button" href="admin/login.jsp" class="custom-hover rounded-5 btn btn-outline-secondary w-100 mb-3 ">Go to Admin UI</a>
 									 </form>
 								</div>
 							</div>

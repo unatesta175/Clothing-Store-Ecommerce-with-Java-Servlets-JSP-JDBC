@@ -196,7 +196,7 @@
 				href="${pageContext.request.contextPath}/">Home</a></li>
 
 			<li class="nav-item" data-nav-item="data-nav-item"><a
-				class="nav-link" href="ProductController?action=productCatalogue">Products</a></li>
+				class="nav-link" href="ProductController?action=productCatalogue">Product Catalog</a></li>
 			
 
 			<li class="nav-item" data-nav-item="data-nav-item"><a

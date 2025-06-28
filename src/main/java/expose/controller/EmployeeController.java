@@ -523,7 +523,7 @@ public class EmployeeController extends HttpServlet {
 
 			HttpSession session = request.getSession(true);
 			session.setAttribute("successMessage", "Registered Successfully!");
-			response.sendRedirect("EmployeeController?action=createEmployee");
+			response.sendRedirect("EmployeeController?action=listEmployee");
 		} else {
 			HttpSession session = request.getSession(true);
 			session.setAttribute("errorMessage", "Employee already exists.");
@@ -598,7 +598,9 @@ public class EmployeeController extends HttpServlet {
 
 		HttpSession session = request.getSession(true);
 		session.setAttribute("successMessage", "Employee updated sucessfully!");
-		response.sendRedirect("EmployeeController?action=updateEmployee&empid=" + id);
+		response.sendRedirect("EmployeeController?action=listEmployee");
+		/*response.sendRedirect("EmployeeController?action=updateEmployee&empid=" + id);*/
+		
 
 	}
 

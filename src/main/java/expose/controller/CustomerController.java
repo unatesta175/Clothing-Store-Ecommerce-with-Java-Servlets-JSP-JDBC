@@ -34,6 +34,8 @@ import expose.dao.OrderDAO;
 import expose.model.Cart;
 import expose.model.Customer;
 
+
+
 /**
  * Servlet implementation class CustomerController
  */
@@ -72,6 +74,9 @@ public class CustomerController extends HttpServlet {
 				session.setAttribute("customer", null);
 				// destroy session
 				session.invalidate();
+				
+				HttpSession session = request.getSession(true);
+				session.setAttribute("successMessage", "Successfully Logged out.");
 				response.sendRedirect("login.jsp");
 			} catch (Throwable ex) {
 				ex.printStackTrace();
@@ -151,9 +156,10 @@ public class CustomerController extends HttpServlet {
 		if (email == null || email.isEmpty() || password == null || password.isEmpty() || confirmpassword == null
 				|| confirmpassword.isEmpty() || name == null || name.isEmpty() || phone == null || phone.isEmpty()
 				|| address == null || address.isEmpty()) {
-			request.setAttribute("errorMessage",
+			HttpSession session = request.getSession(true);
+			session.setAttribute("errorMessage",
 					"Name, email, password, confirm password, phone number and address are required.");
-			request.getRequestDispatcher("register.jsp").forward(request, response);
+			response.sendRedirect("register.jsp");
 			return;
 		}
 

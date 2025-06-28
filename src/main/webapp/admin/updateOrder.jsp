@@ -146,7 +146,8 @@ if (session.getAttribute("employee") == null) {
 												Date & Time </label>
 											<div class="col-sm-8">
 												<input readonly type="text" name="phone"
-													value="${order.createdAt}" class="form-control"
+													value="<fmt:formatDate value="${order.createdAt}"
+															pattern="d/M/yyyy, h:mm:ss a" />" class="form-control"
 													placeholder="Phone no" style="border-radius: 30px;">
 											</div>
 										</div>
@@ -207,11 +208,14 @@ if (session.getAttribute("employee") == null) {
 									</div>
 									<!-- /.card-body -->
 									<div class="card-footer ">
-										<input type="submit" class="btn btn-warning"
-											style="border-radius: 30px;" value="Submit Changes">
-										<a href="OrderController?action=listorder"
-											class="btn btn-primary float-right"
+									
+									<a href="OrderController?action=listorder"
+											class="btn btn-secondary"
 											style="border-radius: 30px;">Cancel</a>
+									
+										<input type="submit" class="btn btn-primary float-right"
+											style="border-radius: 30px;" value="Submit Changes">
+										
 									</div>
 									<!-- /.card-footer -->
 								</form>

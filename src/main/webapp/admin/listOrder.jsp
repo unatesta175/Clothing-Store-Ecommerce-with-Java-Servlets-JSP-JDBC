@@ -160,12 +160,14 @@ if (session.getAttribute("employee") == null) {
 																	<a
 																		href="${pageContext.request.contextPath}/OrderController?action=updateOrder&oid=<c:out value="${order.id}" />"
 																		class="btn btn-warning btn-sm"
+																		title="Update order status"
 																		style="margin-right: 4px !important;"> <i
 																		class="fas fa-edit"></i>
 																	</a>
 																	<a
 																		href="${pageContext.request.contextPath}/OrderController?action=generateReceipt&oid=<c:out value="${order.id}" />"
-																		class="btn btn-secondary btn-sm"> <i
+																		class="btn btn-secondary btn-sm"
+																		title="Print receipt"> <i
 																		class="fas fa-print"></i>
 																	</a>
 																</c:when>
@@ -174,6 +176,7 @@ if (session.getAttribute("employee") == null) {
 																	<a
 																		href="${pageContext.request.contextPath}/OrderController?action=updateOrder&oid=<c:out value="${order.id}" />"
 																		class="btn btn-warning btn-sm"
+																		title="Update order status"
 																		style="margin-right: 4px !important;"> <i
 																		class="fas fa-edit"></i>
 																	</a>

@@ -110,7 +110,9 @@ response.setDateHeader("Expires", 0);
 																		<!-- Pen icon submit -->
 																		<button type="submit"
 																			class="btn btn-sm text-primary text-opacity-85 text-primary-hover"
-																			onclick="return confirm('Are you sure you want to update this item?');">
+																			onclick="return confirm('Are you sure you want to update this item?');"
+																			title="Update quantity of this item"
+																			>
 																			<span class="fas fa-pen"></span>
 																		</button>
 																	</div>
@@ -134,6 +136,7 @@ response.setDateHeader("Expires", 0);
 
 																<a
 																href="CartController?action=delete&cid=${item.cartId}&pid=${item.product.id}"
+																title="Delete this item"
 																class="btn btn-sm text-body-tertiary text-opacity-85 text-body-tertiary-hover me-2"
 																onclick="return confirm('Are you sure you want to delete this item?');">
 																	<span class="fas fa-trash"></span>

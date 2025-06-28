@@ -61,9 +61,21 @@ response.setDateHeader("Expires", 0);
 
 								<h2 class="mb-1 lh-sm text-body-tertiary">${ product.name }</h2>
 
-								<span class="badge badge-phoenix badge-phoenix-secondary mb-1">${ productcollarType }
-									collar</span> <span
-									class="badge badge-phoenix badge-phoenix-secondary mb-1">${ productfitType  }</span>
+
+								<c:choose>
+									<c:when test="${ productcollarType == '' }">
+
+										<span class="badge badge-phoenix badge-phoenix-secondary mb-1">${ productfitType  }</span>
+									</c:when>
+
+									<c:when test="${ productfitType == '' }">
+										<span class="badge badge-phoenix badge-phoenix-secondary mb-1">${ productcollarType }
+										</span>
+
+									</c:when>
+
+								</c:choose>
+
 
 								<div class="d-flex flex-wrap align-items-start mb-3">
 
@@ -114,8 +126,8 @@ response.setDateHeader("Expires", 0);
 								</div>
 
 								<form action="CartController" method="post">
-<input name="action" type="hidden" value="create">
-									<input name="price" type="hidden" value="${product.price}">
+									<input name="action" type="hidden" value="create"> <input
+										name="price" type="hidden" value="${product.price}">
 
 
 									<div class="mb-3">
@@ -190,331 +202,6 @@ response.setDateHeader("Expires", 0);
 	<!-- <section> close ============================-->
 	<!-- ============================================-->
 
-	<!-- ============================================-->
-	<!-- <section> begin ============================-->
-	<section class="py-0 mb-9">
-		<div class="container">
-			<div class="d-flex flex-between-center mb-3">
-				<div>
-					<h3>Similar Products</h3>
-					<p class="mb-0 text-body-tertiary fw-semibold">Essential for a
-						better life</p>
-				</div>
-				<button class="btn btn-sm btn-phoenix-primary">View all</button>
-			</div>
-			<div class="swiper-theme-container products-slider">
-				<div class="swiper swiper-container theme-slider"
-					data-swiper='{"slidesPerView":1,"spaceBetween":16,"breakpoints":{"450":{"slidesPerView":2,"spaceBetween":16},"768":{"slidesPerView":3,"spaceBetween":16},"992":{"slidesPerView":4,"spaceBetween":16},"1200":{"slidesPerView":5,"spaceBetween":16},"1540":{"slidesPerView":6,"spaceBetween":16}}}'>
-					<div class="swiper-wrapper">
-						<div class="swiper-slide">
-							<div
-								class="position-relative text-decoration-none product-card h-100">
-								<div class="d-flex flex-column justify-content-between h-100">
-									<div>
-										<div
-											class="bg-body-emphasis rounded-4  border border-1 border-translucent rounded-3 position-relative mb-3">
-											<button
-												class="btn rounded-circle p-0 d-flex flex-center btn-wish z-2 d-toggle-container btn-outline-primary"
-												data-bs-toggle="tooltip" data-bs-placement="top"
-												title="Add to wishlist">
-												<span class="fas fa-heart d-block-hover"></span><span
-													class="far fa-heart d-none-hover"></span>
-											</button>
-											<img class="img-fluid"
-												src="<%=request.getContextPath()%>/images/jersey-4.png"
-												alt="" />
-										</div>
-										<a class="stretched-link" href="product-details.html">
-											<h6 class="mb-2 lh-sm line-clamp-3 product-name">FC
-												Barcelona Home Jersey 2023/24 (Player Version)</h6>
-										</a>
-										<p class="fs-9">
-											<span class="fa fa-star text-warning"></span><span
-												class="fa fa-star text-warning"></span><span
-												class="fa fa-star text-warning"></span><span
-												class="fa fa-star text-warning"></span><span
-												class="fa fa-star text-warning"></span><span
-												class="text-body-quaternary fw-semibold ms-1">(59
-												people rated)</span>
-										</p>
-									</div>
-									<div>
-										<div class="d-flex align-items-center mb-1">
-											<p class="me-2 text-body text-decoration-line-through mb-0">RM49.99</p>
-											<h3 class="text-body-emphasis mb-0">RM34.99</h3>
-										</div>
-
-									</div>
-								</div>
-							</div>
-						</div>
-						<div class="swiper-slide">
-							<div
-								class="position-relative text-decoration-none product-card h-100">
-								<div class="d-flex flex-column justify-content-between h-100">
-									<div>
-										<div
-											class="bg-body-emphasis rounded-4  border border-1 border-translucent rounded-3 position-relative mb-3">
-											<button
-												class="btn rounded-circle p-0 d-flex flex-center btn-wish z-2 d-toggle-container btn-outline-primary"
-												data-bs-toggle="tooltip" data-bs-placement="top"
-												title="Add to wishlist">
-												<span class="fas fa-heart d-block-hover"></span><span
-													class="far fa-heart d-none-hover"></span>
-											</button>
-											<img class="img-fluid"
-												src="<%=request.getContextPath()%>/images/jersey-5.png"
-												alt="" />
-										</div>
-										<a class="stretched-link" href="product-details.html">
-											<h6 class="mb-2 lh-sm line-clamp-3 product-name">FC
-												Barcelona Away Jersey 2023/24 (Player Version)</h6>
-										</a>
-										<p class="fs-9">
-											<span class="fa fa-star text-warning"></span><span
-												class="fa fa-star text-warning"></span><span
-												class="fa fa-star text-warning"></span><span
-												class="fa fa-star text-warning"></span><span
-												class="fa fa-star text-warning"></span><span
-												class="text-body-quaternary fw-semibold ms-1">(13
-												people rated)</span>
-										</p>
-									</div>
-									<div>
-
-										<div class="d-flex align-items-center mb-1">
-											<p class="me-2 text-body text-decoration-line-through mb-0">RM1299.00</p>
-											<h3 class="text-body-emphasis mb-0">RM1149.00</h3>
-										</div>
-
-									</div>
-								</div>
-							</div>
-						</div>
-						<div class="swiper-slide">
-							<div
-								class="position-relative text-decoration-none product-card h-100">
-								<div class="d-flex flex-column justify-content-between h-100">
-									<div>
-										<div
-											class="bg-body-emphasis rounded-4  border border-1 border-translucent rounded-3 position-relative mb-3">
-											<button
-												class="btn rounded-circle p-0 d-flex flex-center btn-wish z-2 d-toggle-container btn-outline-primary"
-												data-bs-toggle="tooltip" data-bs-placement="top"
-												title="Add to wishlist">
-												<span class="fas fa-heart d-block-hover"></span><span
-													class="far fa-heart d-none-hover"></span>
-											</button>
-											<img class="img-fluid"
-												src="<%=request.getContextPath()%>/images/jersey-2.png"
-												alt="" />
-										</div>
-										<a class="stretched-link" href="product-details.html">
-											<h6 class="mb-2 lh-sm line-clamp-3 product-name">Nike
-												Liverpool Home Jersey 2023/24 (Player Version)</h6>
-										</a>
-										<p class="fs-9">
-											<span class="fa fa-star text-warning"></span><span
-												class="fa fa-star text-warning"></span><span
-												class="fa fa-star text-warning"></span><span
-												class="fa fa-star text-warning"></span><span
-												class="fa fa-star text-warning"></span><span
-												class="text-body-quaternary fw-semibold ms-1">(64
-												people rated)</span>
-										</p>
-									</div>
-									<div>
-										<h3 class="text-body-emphasis">RM59.00</h3>
-
-									</div>
-								</div>
-							</div>
-						</div>
-						<div class="swiper-slide">
-							<div
-								class="position-relative text-decoration-none product-card h-100">
-								<div class="d-flex flex-column justify-content-between h-100">
-									<div>
-										<div
-											class="bg-body-emphasis rounded-4  border border-1 border-translucent rounded-3 position-relative mb-3">
-											<button
-												class="btn rounded-circle p-0 d-flex flex-center btn-wish z-2 d-toggle-container btn-outline-primary"
-												data-bs-toggle="tooltip" data-bs-placement="top"
-												title="Add to wishlist">
-												<span class="fas fa-heart d-block-hover"></span><span
-													class="far fa-heart d-none-hover"></span>
-											</button>
-											<img class="img-fluid"
-												src="<%=request.getContextPath()%>/images/jersey-3.png"
-												alt="" />
-										</div>
-										<a class="stretched-link" href="product-details.html">
-											<h6 class="mb-2 lh-sm line-clamp-3 product-name">Adidas
-												Manchester United Pre-Match Jersey 2023/24</h6>
-										</a>
-										<p class="fs-9">
-											<span class="fa fa-star text-warning"></span><span
-												class="fa fa-star text-warning"></span><span
-												class="fa fa-star text-warning"></span><span
-												class="fa fa-star text-warning"></span><span
-												class="fa fa-star text-warning"></span><span
-												class="text-body-quaternary fw-semibold ms-1">(32
-												people rated)</span>
-										</p>
-									</div>
-									<div>
-										<p class="fs-9 text-body-highlight fw-bold mb-2">Stock
-											limited</p>
-										<div class="d-flex align-items-center mb-1">
-											<p class="me-2 text-body text-decoration-line-through mb-0">RM899.99</p>
-											<h3 class="text-body-emphasis mb-0">RM855.00</h3>
-										</div>
-
-									</div>
-								</div>
-							</div>
-						</div>
-						<div class="swiper-slide">
-							<div
-								class="position-relative text-decoration-none product-card h-100">
-								<div class="d-flex flex-column justify-content-between h-100">
-									<div>
-										<div
-											class="bg-body-emphasis rounded-4  border border-1 border-translucent rounded-3 position-relative mb-3">
-											<button
-												class="btn rounded-circle p-0 d-flex flex-center btn-wish z-2 d-toggle-container btn-outline-primary"
-												data-bs-toggle="tooltip" data-bs-placement="top"
-												title="Add to wishlist">
-												<span class="fas fa-heart d-block-hover"></span><span
-													class="far fa-heart d-none-hover"></span>
-											</button>
-											<img class="img-fluid"
-												src="<%=request.getContextPath()%>/images/jersey-4.png"
-												alt="" />
-										</div>
-										<a class="stretched-link" href="product-details.html">
-											<h6 class="mb-2 lh-sm line-clamp-3 product-name">Nike
-												Chelsea Home Jersey 2023/24 (Stadium Version)</h6>
-										</a>
-										<p class="fs-9">
-											<span class="fa fa-star text-warning"></span><span
-												class="fa fa-star text-warning"></span><span
-												class="fa fa-star text-warning"></span><span
-												class="fa fa-star text-warning"></span><span
-												class="fa fa-star text-warning"></span><span
-												class="text-body-quaternary fw-semibold ms-1">(39
-												people rated)</span>
-										</p>
-									</div>
-									<div>
-
-										<h3 class="text-body-emphasis">RM59.00</h3>
-
-									</div>
-								</div>
-							</div>
-						</div>
-						<div class="swiper-slide">
-							<div
-								class="position-relative text-decoration-none product-card h-100">
-								<div class="d-flex flex-column justify-content-between h-100">
-									<div>
-										<div
-											class="bg-body-emphasis rounded-4  border border-1 border-translucent rounded-3 position-relative mb-3">
-											<button
-												class="btn rounded-circle p-0 d-flex flex-center btn-wish z-2 d-toggle-container btn-outline-primary"
-												data-bs-toggle="tooltip" data-bs-placement="top"
-												title="Add to wishlist">
-												<span class="fas fa-heart d-block-hover"></span><span
-													class="far fa-heart d-none-hover"></span>
-											</button>
-											<img class="img-fluid"
-												src="<%=request.getContextPath()%>/images/jersey-5.png"
-												alt="" />
-										</div>
-										<a class="stretched-link" href="product-details.html">
-											<h6 class="mb-2 lh-sm line-clamp-3 product-name">Nike
-												Chelsea Away Jersey 2023/24 (Stadium Version)</h6>
-										</a>
-										<p class="fs-9">
-											<span class="fa fa-star text-warning"></span><span
-												class="fa fa-star text-warning"></span><span
-												class="fa fa-star text-warning"></span><span
-												class="fa fa-star text-warning"></span><span
-												class="fa fa-star text-warning"></span><span
-												class="text-body-quaternary fw-semibold ms-1">(6
-												people rated)</span>
-										</p>
-									</div>
-									<div>
-										<p class="fs-9 text-body-highlight fw-bold mb-1">Bundle
-											availabe</p>
-										<p class="fs-9 text-body-tertiary mb-2">Charger not
-											included</p>
-										<h3 class="text-body-emphasis">RM89.00</h3>
-
-									</div>
-								</div>
-							</div>
-						</div>
-						<div class="swiper-slide">
-							<div
-								class="position-relative text-decoration-none product-card h-100">
-								<div class="d-flex flex-column justify-content-between h-100">
-									<div>
-										<div
-											class="bg-body-emphasis rounded-4  border border-1 border-translucent rounded-3 position-relative mb-3">
-											<button
-												class="btn rounded-circle p-0 d-flex flex-center btn-wish z-2 d-toggle-container btn-outline-primary"
-												data-bs-toggle="tooltip" data-bs-placement="top"
-												title="Add to wishlist">
-												<span class="fas fa-heart d-block-hover"></span><span
-													class="far fa-heart d-none-hover"></span>
-											</button>
-											<img class="img-fluid"
-												src="<%=request.getContextPath()%>/images/jersey-6.png"
-												alt="" />
-										</div>
-										<a class="stretched-link" href="product-details.html">
-											<h6 class="mb-2 lh-sm line-clamp-3 product-name">New
-												York Mets MLB Varsity Jacket</h6>
-										</a>
-										<p class="fs-9">
-											<span class="fa fa-star text-warning"></span><span
-												class="fa fa-star text-warning"></span><span
-												class="fa fa-star text-warning"></span><span
-												class="fa fa-star text-warning"></span><span
-												class="fa fa-star text-warning"></span><span
-												class="text-body-quaternary fw-semibold ms-1">(67
-												people rated)</span>
-										</p>
-									</div>
-									<div>
-										<div class="d-flex align-items-center mb-1">
-											<p class="me-2 text-body text-decoration-line-through mb-0">RM125.00</p>
-											<h3 class="text-body-emphasis mb-0">RM89.00</h3>
-										</div>
-
-									</div>
-								</div>
-							</div>
-						</div>
-					</div>
-				</div>
-				<div class="swiper-nav">
-					<div class="swiper-button-next">
-						<span class="fas fa-chevron-right nav-icon"></span>
-					</div>
-					<div class="swiper-button-prev">
-						<span class="fas fa-chevron-left nav-icon"></span>
-					</div>
-				</div>
-			</div>
-		</div>
-		<!-- end of .container-->
-	</section>
-	<!-- <section> close ============================-->
-	<!-- ============================================-->
 
 
 
