@@ -353,7 +353,7 @@ public class CustomerDAO {
 		        SELECT COUNT(*) as count
 		        FROM orders o
 		        JOIN customers c ON o.customer_id = c.id
-		        WHERE o.status != 'Failed' AND
+		        WHERE o.status != 'Failed' AND o.status != 'Pending' AND
 		        UPPER(c.address) LIKE ?
 		    """;
 

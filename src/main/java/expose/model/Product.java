@@ -14,18 +14,6 @@ public class Product implements Serializable {
     private String type;
     private String category;
     private int variantCount;
-
-   
-  
-
-	public String getCategory() {
-		return category;
-	}
-
-	public void setCategory(String category) {
-		this.category = category;
-	}
-
 	private Timestamp createdAt;
     private Timestamp updatedAt;
 
@@ -125,6 +113,14 @@ public class Product implements Serializable {
 	public void setUpdatedAt(Timestamp updatedAt) {
 		this.updatedAt = updatedAt;
 	}
+	public String getCategory() {
+		return category;
+	}
+
+	public void setCategory(String category) {
+		this.category = category;
+	}
+
 	
 	 public int getVariantCount() {
 	        return variantCount;

@@ -20,35 +20,7 @@ public class Employee implements Serializable {
 	private boolean loggedIn = false;
 	private boolean valid;
 
-    public String getImage() {
-		return image;
-	}
-
-
-	public void setImage(String image) {
-		this.image = image;
-	}
-
-
-	public boolean isLoggedIn() {
-		return loggedIn;
-	}
-
-
-	public void setLoggedIn(boolean loggedIn) {
-		this.loggedIn = loggedIn;
-	}
-
-
-	public boolean isValid() {
-		return valid;
-	}
-
-
-	public void setValid(boolean valid) {
-		this.valid = valid;
-	}
-
+   
 
 	// No-arg constructor
     public Employee() {
@@ -136,5 +108,34 @@ public class Employee implements Serializable {
 	public void setUpdatedAt(Timestamp updatedAt) {
 		this.updatedAt = updatedAt;
 	}
+	 public String getImage() {
+			return image;
+		}
+
+
+		public void setImage(String image) {
+			this.image = image;
+		}
+
+
+		public boolean isLoggedIn() {
+			return loggedIn;
+		}
+
+
+		public void setLoggedIn(boolean loggedIn) {
+			this.loggedIn = loggedIn;
+		}
+
+
+		public boolean isValid() {
+			return valid;
+		}
+
+
+		public void setValid(boolean valid) {
+			this.valid = valid;
+		}
+
 	
 }

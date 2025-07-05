@@ -101,7 +101,8 @@ public class PaymentController extends HttpServlet {
                         OrderDAO.updateOrderStatus(payment.getOrderId(), "Failed");
                     }
                     session.setAttribute("errorMessage", "Payment verification failed.");
-                    response.sendRedirect("OrderController?action=orderHistory");
+					/* response.sendRedirect("OrderController?action=orderHistory"); */
+                    response.sendRedirect("OrderController?action=orderdetails&orderId=" + payment.getOrderId());
                 }
             } else {
                 session.setAttribute("errorMessage", "Invalid payment response.");

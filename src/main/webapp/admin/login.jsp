@@ -74,11 +74,11 @@ String activePage = (String) request.getAttribute("activePage");
 					<!-- <p class="mb-1">
 						<a href="forgot-password.html">I forgot my password</a>
 					</p> -->
-					<p class="mb-0 mt-3">
+					<%-- <p class="mb-0 mt-3">
 						<a href="${pageContext.request.contextPath}/EmployeeController?action=register" class="text-center">Register a new
 							membership</a>
 				
-					</p>
+					</p> --%>
 					<p class="mb-0">
 						
 					   <span class="fs-9 fw-bold">  <a  href="${pageContext.request.contextPath}/login.jsp"> Go to Customer UI </a></span> 

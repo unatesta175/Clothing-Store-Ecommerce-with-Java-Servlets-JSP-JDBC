@@ -14,21 +14,12 @@ public class Customer implements Serializable{
 	private String password;
 	private String phone;
 	private String address;
-	
-	private boolean loggedIn = false;
-	private boolean valid;
 	private String image;
-	
-	 public String getImage() {
-		return image;
-	}
-
-	public void setImage(String image) {
-		this.image = image;
-	}
-
 	private Timestamp createdAt;
-	 private Timestamp updatedAt;
+	private Timestamp updatedAt;
+	private boolean loggedIn = false;
+    private boolean valid;
+	
 	 
 	public Customer() {
 		
@@ -106,6 +97,15 @@ public class Customer implements Serializable{
 	public void setUpdatedAt(Timestamp updatedAt) {
 		this.updatedAt = updatedAt;
 	}
+	
+	 public String getImage() {
+			return image;
+		}
+
+		public void setImage(String image) {
+			this.image = image;
+		}
+
 
 	 public String timeAgo() {
 	        // 1. Check if createdAt is null before attempting conversion
