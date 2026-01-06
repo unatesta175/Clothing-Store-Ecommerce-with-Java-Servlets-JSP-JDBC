@@ -225,7 +225,8 @@ public class CustomerController extends HttpServlet {
 			String password = request.getParameter("password");
 
 			if (email == null || email.isEmpty() || password == null || password.isEmpty()) {
-				request.setAttribute("errorMessage", "Email and password are required.");
+				HttpSession session = request.getSession(true);
+				session.setAttribute("errorMessage", "Email and password are required.");
 				request.getRequestDispatcher("login.jsp").forward(request, response);
 				return;
 			}

@@ -122,11 +122,11 @@ if (session.getAttribute("employee") == null) {
 									</div>
 									<!-- /.card-body -->
 									<div class="card-footer ">
-										<button type="submit" class="btn btn-warning"
-											style="border-radius: 30px;">Save changes</button>
-											
-											<a class="btn btn-primary float-right" href="profile.jsp" style="border-radius: 30px;">Back to profile</a>
 										
+											
+											<a class="btn btn-secondary " href="profile.jsp" style="border-radius: 30px;">Back</a>
+										<button type="submit" class="btn btn-warning float-right"
+											style="border-radius: 30px;">Save changes</button>
 									</div>
 									
 										

@@ -84,6 +84,8 @@ public class EmployeeController extends HttpServlet {
 				session.setAttribute("employee", null);
 				// destroy session
 				session.invalidate();
+				HttpSession session = request.getSession(true);
+				session.setAttribute("successMessage", "Logged out successfully.");
 				response.sendRedirect("admin/login.jsp");
 			} catch (Throwable ex) {
 				ex.printStackTrace();
@@ -376,7 +378,7 @@ public class EmployeeController extends HttpServlet {
 		        // File too large, set error message and redirect
 		        HttpSession session = request.getSession(true);
 		        session.setAttribute("errorMessage", "Image size must be less than 2MB.");
-		        response.sendRedirect("EmployeeController?action=updateEmployee&empid=" + id);
+		        response.sendRedirect("EmployeeController?action=profile");
 		        return;
 		    }
 		    
