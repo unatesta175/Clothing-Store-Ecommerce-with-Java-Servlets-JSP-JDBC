@@ -169,8 +169,8 @@ public class OrderController extends HttpServlet {
                 int amountInCents = (int) (testMoneyAmount * 100);
                 // Prepare ToyyibPay data
                 Map<String, String> toyyibPayData = new HashMap<>();
-                toyyibPayData.put("userSecretKey", "m8zfj65c-2fzo-gq3b-rwhw-xvneusqy7wuy");
-                toyyibPayData.put("categoryCode", "2n8qqo61");
+                toyyibPayData.put("userSecretKey", "ENTER-YOUR-OWN-KEY");
+                toyyibPayData.put("categoryCode", "ENTER-YOUR-OWN-KEY");
                 toyyibPayData.put("billName", "Order #" + createdOrder.getId());
                 toyyibPayData.put("billDescription", "Payment for order #" + createdOrder.getId() + " amount RM" + String.format("%.2f", totalAmount));
                 toyyibPayData.put("billPriceSetting", "1");
